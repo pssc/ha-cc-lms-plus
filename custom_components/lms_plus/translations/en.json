@@ -1,0 +1,93 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Choose LMS Plus setup",
+        "description": "Choose a server and optionally add server-wide LMS Plus controls to that Squeezebox server's existing device. Leave it off to add player sensors and controls.",
+        "data": {
+          "squeezebox_entry": "Squeezebox server",
+          "server_controls": "Add server-level controls"
+        }
+      },
+      "player": {
+        "title": "Select a player",
+        "data": {
+          "player": "Player"
+        }
+      },
+      "move_player": {
+        "title": "Move player to this LMS?",
+        "description": "This asks the selected LMS server to take control of the player. If the player is synchronized with other players, LMS may move the whole group.",
+        "data": {
+          "confirm": "Move player to this LMS"
+        }
+      },
+      "wait_for_player": {
+        "title": "Waiting for Squeezebox discovery",
+        "description": "Wait until the destination LMS reports this player as connected and the source LMS no longer does, then submit this step. LMS Plus will update the Squeezebox device registry and wait for Home Assistant's Squeezebox integration to assign the player to the destination."
+      }
+    },
+    "abort": {
+      "no_squeezebox_config": "Set up the Squeezebox integration first.",
+      "server_controls_use_setup": "Server controls are configured when the entry is created. Remove this entry and add it again to choose another server.",
+      "no_players": "The selected Squeezebox server has no available player entities.",
+      "player_not_on_server": "Select a player that belongs to the chosen server.",
+      "player_not_found": "The selected player is no longer available from a Squeezebox server.",
+      "move_cancelled": "The player was not moved.",
+      "already_configured": "This player is already set up in LMS Plus."
+    },
+    "error": {
+      "move_failed": "The destination LMS could not move the player. Check that the player is compatible and the LMS server is reachable.",
+      "player_not_discovered": "Home Assistant has not assigned this player to the selected server yet. Wait for Squeezebox discovery and check again.",
+      "move_not_verified": "LMS has not confirmed that the player moved yet. Check both LMS servers, then try again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Select the Squeezebox server",
+        "data": {
+          "squeezebox_entry": "Squeezebox server"
+        }
+      },
+      "player": {
+        "title": "Select a player",
+        "data": {
+          "player": "Player"
+        }
+      },
+      "move_player": {
+        "title": "Move player to this LMS?",
+        "description": "This asks the selected LMS server to take control of the player. If the player is synchronized with other players, LMS may move the whole group.",
+        "data": {
+          "confirm": "Move player to this LMS"
+        }
+      },
+      "wait_for_player": {
+        "title": "Waiting for Squeezebox discovery",
+        "description": "Wait until the destination LMS reports this player as connected and the source LMS no longer does, then submit this step. LMS Plus will update the Squeezebox device registry and wait for Home Assistant's Squeezebox integration to assign the player to the destination."
+      },
+      "formats": {
+        "title": "Playlist item formats",
+        "description": "Supported placeholders: {track_number} (track number), {trackname} (track title), {rating} (star rating), {artist}, {album}, {year} (album year), {bitrate} (kbps and VBR/CBR when known), {format} (audio format), and {duration}. Example: {track_number}. {trackname} {rating}. Missing values are left blank. {validation_error}",
+        "data": {
+          "playlist_summary_format": "Summary format",
+          "playlist_description_format": "Description format"
+        }
+      }
+    },
+    "error": {
+      "invalid_format": "The playlist format could not be saved. See the details below the fields.",
+      "move_failed": "The destination LMS could not move the player. Check that the player is compatible and the LMS server is reachable.",
+      "player_not_discovered": "Home Assistant has not assigned this player to the selected server yet. Wait for Squeezebox discovery and check again.",
+      "move_not_verified": "LMS has not confirmed that the player moved yet. Check both LMS servers, then try again."
+    },
+    "abort": {
+      "no_squeezebox_config": "Set up the Squeezebox integration first.",
+      "no_players": "The selected Squeezebox server has no available player entities.",
+      "player_not_on_server": "Select or move a player to the chosen server.",
+      "player_not_found": "The selected player is no longer available from a Squeezebox server.",
+      "move_cancelled": "The player was not moved."
+    }
+  }
+}

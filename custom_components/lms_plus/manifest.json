@@ -1,0 +1,16 @@
+{
+  "domain": "lms_plus",
+  "name": "LMS Plus",
+  "version": "0.1.0",
+  "documentation": "https://github.com/pssc/ha-cc-lms-plus",
+  "issue_tracker": "https://github.com/pssc/ha-cc-lms-plus/issues",
+  "categories": [
+    "media_entertainment.speakers_audio",
+    "media_entertainment.music_radio_services"
+  ],
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["squeezebox", "todo"],
+  "requirements": [],
+  "iot_class": "local_push"
+}

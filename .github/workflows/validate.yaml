@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate-hacs:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Validate repository for HACS
+        uses: hacs/action@main
+        with:
+          category: integration
+
+  validate-hassfest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate integration with hassfest
+        uses: home-assistant/actions/hassfest@master

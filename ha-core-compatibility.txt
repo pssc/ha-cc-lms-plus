@@ -1,0 +1,24 @@
+# Home Assistant Core version target for the private Squeezebox API integration.
+2025.11.1
+# This Core release uses PySqueezebox 0.13.0. Player.async_query was checked
+# from the published package source; playlist_loop remains in _status.
+# Player.async_query carries the existing player's ID for LMS commands and
+# queries, including plugin rating writes and their response confirmation.
+# Player._lms provides the existing Server object; Server.async_query sends
+# server-level commands with an empty player ID by default, and Server.host is
+# the destination address. Used for LMS `disconnect <playerid> <ip>` to pull a
+# player from another server after explicit user confirmation.
+# The same existing Server object sends server-level `rescan`,
+# `rescan playlists`, and `wipecache` commands; no second LMS connection is
+# opened. Normal music library scans are direct buttons; destructive cache
+# rebuilds require a separate 60-second arm-and-confirm flow. Server controls
+# use the selected Squeezebox config entry's unique ID to attach to its
+# existing server device.
+# The per-player daily alarm time entity uses the existing Player.async_query
+# API to list and create/update LMS alarms; it does not create a second client.
+# The move flow verifies the player is connected on the destination LMS and
+# disconnected from the source before updating the Device Registry. Core
+# 2025.11.1 uses async_update_device(add_config_entry_id, remove_config_entry_id);
+# newer Core versions expose new_config_entry_id instead. The flow detects the
+# available signature and uses the appropriate API.
+# Dev smoke test: Home Assistant Core 2026.11.1 with PySqueezebox 0.14.0.
