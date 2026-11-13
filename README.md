@@ -13,8 +13,9 @@ and controls using the existing Squeezebox (Lyrion Music Server) integration.
 It does not replace or modify Home Assistant Core or the Squeezebox
 integration.
 
-[![Open LMS Plus in the Home Assistant Marketplace](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=pssc&repository=ha-cc-lms-plus&category=integration)
+<!-- ha-marketplace:exclude-start -->
 [![Open LMS Plus in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=pssc&repository=ha-cc-lms-plus&category=integration)
+<!-- ha-marketplace:exclude-end -->
 
 ## License
 
@@ -72,17 +73,17 @@ the built-in Squeezebox integration, so compatibility with other versions is
 not guaranteed. The [compatibility notes](ha-core-compatibility.txt) record
 the checked versions and implementation details.
 
+<!-- ha-marketplace:exclude-start -->
 ## Installation
 
-### Home Assistant Marketplace
+### Home Assistant Marketplace (Home Assistant 2026.11 and newer)
 
-Once this repository is public, add `pssc/ha-cc-lms-plus` from **Settings →
-Marketplace → Add from link**, select the integration type if prompted, then
-install **LMS Plus**. A GitHub connection is needed by Marketplace to add a
-custom repository and keep it updated. Catalog listing is a separate later
-step; you can install it as a custom repository before then.
+Use the Marketplace button above to add `pssc/ha-cc-lms-plus` as a custom
+repository, then install **LMS Plus**. A GitHub connection is needed to add and
+update a custom repository. Catalog inclusion is deferred until the v1.0.0
+release.
 
-### HACS
+### HACS (older Home Assistant versions)
 
 Add `pssc/ha-cc-lms-plus` as a custom repository with the **Integration**
 category, then install **LMS Plus**. Restart Home Assistant if prompted.
@@ -91,6 +92,7 @@ category, then install **LMS Plus**. Restart Home Assistant if prompted.
 
 Copy the `custom_components/lms_plus` directory into the Home Assistant
 configuration's `custom_components` directory, then restart Home Assistant.
+<!-- ha-marketplace:exclude-end -->
 
 ## Setup
 
