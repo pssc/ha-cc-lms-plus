@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 — Documentation update
+
+- Clarify installation through the Home Assistant Marketplace on newer Home
+  Assistant versions and HACS on older versions. The HACS link also opens the
+  Marketplace on Home Assistant 2026.11 and newer.
+- Defer catalog submission until the 1.0.0 release.
+
 ## 0.1.0 — Experimental pre-release
 
 This is the first experimental release of LMS Plus. Features and configuration
